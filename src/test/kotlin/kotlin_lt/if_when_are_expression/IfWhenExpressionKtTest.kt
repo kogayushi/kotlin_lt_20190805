@@ -3,6 +3,7 @@ package kotlin_lt.if_when_are_expression
 import org.hamcrest.core.IsEqual.equalTo
 import org.junit.Assert.assertThat
 import org.junit.Test
+import kotlin.collections.Collection as Collection1
 
 
 internal class IfWhenExpressionKtTest {
@@ -55,3 +56,4 @@ internal class IfWhenExpressionKtTest {
         assertThat(actual, equalTo(expected))
     }
 }
+
