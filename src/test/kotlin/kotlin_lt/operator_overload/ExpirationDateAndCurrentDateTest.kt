@@ -1,5 +1,7 @@
 package kotlin_lt.operator_overload
 
+import org.hamcrest.core.IsEqual.equalTo
+import org.junit.Assert.assertThat
 import org.junit.Test
 import java.time.LocalDate
 import kotlin.test.*
@@ -45,6 +47,19 @@ internal class ExpirationDateAndCurrentDateTest {
         // verify
         assertTrue(actualRight)
         assertTrue(actualLeft)
+    }
+
+    @Test
+    fun testExpirationExtended() {
+        // set up
+        val expected = ExpirationDate(LocalDate.of(2019, 8, 12))
+        val expirationDate = ExpirationDate(LocalDate.of(2019, 8, 5))
+
+        // exercise
+        val actual = expirationDate + 7L
+
+        // verify
+        assertThat(actual, equalTo(expected))
     }
 
     @Ignore
