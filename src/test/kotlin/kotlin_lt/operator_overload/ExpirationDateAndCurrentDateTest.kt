@@ -15,23 +15,23 @@ internal class ExpirationDateAndCurrentDateTest {
         val expirationDate = ExpirationDate(LocalDate.of(2019, 8, 5))
 
         // exercise
-        val actual = expirationDate < currentDate
+        val actual = currentDate < expirationDate
 
         // verify
-        assertFalse(actual)
+        assertTrue(actual)
     }
 
     @Test
     fun testExpirationDateIsBeforeCurrentDate() {
         // set up
-        val currentDate = CurrentDate(LocalDate.of(2019, 8, 4))
+        val currentDate = CurrentDate(LocalDate.of(2019, 8, 6))
         val expirationDate = ExpirationDate(LocalDate.of(2019, 8, 5))
 
         // exercise
-        val actual = expirationDate > currentDate
+        val actual = currentDate < expirationDate
 
         // verify
-        assertTrue(actual)
+        assertFalse(actual)
     }
 
     @Test
@@ -41,8 +41,8 @@ internal class ExpirationDateAndCurrentDateTest {
         val expirationDate = ExpirationDate(LocalDate.of(2019, 8, 5))
 
         // exercise
-        val actualRight = expirationDate <= currentDate
-        val actualLeft = expirationDate >= currentDate
+        val actualRight = currentDate <= expirationDate
+        val actualLeft = currentDate >= expirationDate
 
         // verify
         assertTrue(actualRight)
