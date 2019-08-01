@@ -17,7 +17,7 @@ internal class ValueObjectTest {
 
         // verify
         assertThat(valueObject.mainValue, equalTo(otherValueObject.mainValue))
-        assertThat(valueObject.otherValue, not(equalTo(otherValueObject.mainValue)))
+        assertThat(valueObject.otherValue, not(equalTo(otherValueObject.otherValue)))
         assertThat(otherValueObject.toString(), equalTo("ValueObject(mainValue=value object, otherValue=copied object)"))
     }
 }
