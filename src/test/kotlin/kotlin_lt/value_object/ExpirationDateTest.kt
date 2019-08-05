@@ -20,17 +20,17 @@ internal class ExpirationDateTest {
 
     @Test
     fun testHashCode() {
-        val mockDate = LocalDate.now().plusDays(1)
+        val mockDate = LocalDate.of(2018,8,5).plusDays(1)
         for (i in 0..10) {
             // set up
-            val expected = 4135425
+            val expected = 4133382
             val sut = ExpirationDate(mockDate)
 
             // exercise
             val actual = sut.hashCode()
 
             // verify
-            assertEquals(actual, expected) // 何度実行しても同じHash値
+            assertEquals(expected, actual) // 何度実行しても同じHash値
         }
     }
 
